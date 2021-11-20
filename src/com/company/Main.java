@@ -42,7 +42,7 @@ public class Main {
 
         // Loop through text and set values of histogram
         for (int i = 0; i < lowercaseText.length(); i++) {
-            if (lowercaseText.charAt(i) != SEPARATOR) {  // Wir hatten den SEPARATOR hier f?r am sinnvollsten gefunden, da die Anzahl an Leerzeichen nicht mitgez?hlt werden soll
+            if (lowercaseText.charAt(i) != SEPARATOR) {
                 int index = lowercaseText.charAt(i);
                 histogram[index]++;
             }
@@ -59,7 +59,7 @@ public class Main {
         // Determine most significant letter, quantity and quota
         char significantLetter = (char) getIndexOfMaximumEntry(histogram);
         int quantity = histogram[getIndexOfMaximumEntry(histogram)];
-        double quota = (double) quantity / (text.length()); // Hierf?r haben wir den ganzen Text (mit Leerzeichen) benutzt, da in der Aufgabenstellung nichts explizit verlangt war
+        double quota = (double) quantity / (text.length());
 
         // Print result
         System.out.println("Most significant letter: " + significantLetter);
