@@ -54,7 +54,7 @@ public class Main {
     public static char getSignificantLetter(String text) {
         // Get histogram
         int[] histogram = getHistogram(text);
-        DecimalFormat PercentFormat = new DecimalFormat(".#%");
+        DecimalFormat percentFormat = new DecimalFormat(".#%");
 
         // Determine most significant letter, quantity and quota
         char significantLetter = (char) getIndexOfMaximumEntry(histogram);
@@ -63,7 +63,7 @@ public class Main {
 
         // Print result
         System.out.println("Most significant letter: " + significantLetter);
-        System.out.println("Quantity: " + quantity + " times (" + PercentFormat.format(quota) + " of whole text).");
+        System.out.println("Quantity: " + quantity + " times (" + percentFormat.format(quota) + " of whole text).");
 
         return significantLetter;
     }
@@ -72,7 +72,7 @@ public class Main {
         // Variables
         char sigOfChiffre = getSignificantLetter(encryptedText);
         char sigOfPattern = getSignificantLetter(languagePattern);
-        int shift = sigOfChiffre - sigOfPattern;
+        int shift = sigOfPattern - sigOfChiffre;
 
         // Print result
         System.out.println("Most significant letter in the pattern text: " + sigOfPattern);
